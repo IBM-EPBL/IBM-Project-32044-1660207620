@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-node-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flasknode
+  template:
+    metadata:
+      labels:
+        app: flasknode
+    spec:
+      containers:
+        - name: flasknode
+          image: uk.icr.io/expense-tracker-ns/exptrack_repo@sha256:eb08673e89ae61e544c9e420a15c59e71771a1b8d82e606821150a4827a20a1c
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
