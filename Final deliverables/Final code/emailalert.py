@@ -11,7 +11,7 @@ def sendmail(TEXT,email):
     s.starttls()
     s.login("sivimaselvaraj@gmail.com", "Sivi@IBM")
     message  = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
-    s.sendmail("nandhini@gmail.com", email, message)
+    s.sendmail("sivimaselvaraj@gmail.com", email, message)
     s.quit()
 def sendgridmail(user,TEXT):
  
